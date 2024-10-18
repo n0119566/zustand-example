@@ -1,0 +1,20 @@
+import { Button } from "@mui/material";
+import { useCountStore } from "../state/useCountStore";
+
+function Buttons() {
+  const deleteEverything = useCountStore((state) => state.deleteEverything);
+  const body = useCountStore.getState().getRequestBody();
+
+  const handleClick = () => {
+    console.log(body);
+  };
+
+  return (
+    <>
+      <Button onClick={deleteEverything}>Delete it all</Button>
+      <Button onClick={handleClick}>Get Request Body</Button>
+    </>
+  );
+}
+
+export default Buttons;
