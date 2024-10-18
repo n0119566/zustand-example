@@ -6,11 +6,15 @@ function ValuesDisplay() {
 
   return (
     <Box>
-      <Typography>Cost = ${getValue("cost")}</Typography>
-      <Typography>Gallons = {getValue("gallons")}</Typography>
-      <Typography>Miles = {getValue("miles")}</Typography>
-      <Typography>Price per Gallon = ${getValue("perGallonCost")}</Typography>
-      <Typography>MPG = {getValue("mpg")}</Typography>
+      <Typography>Cost = ${useCountStore((state) => state.cost)}</Typography>
+      <Typography>
+        Gallons = {useCountStore((state) => state.gallons)}
+      </Typography>
+      <Typography>Miles = {useCountStore((state) => state.miles)}</Typography>
+      <Typography>
+        Price per Gallon = ${useCountStore((state) => state.perGallonCost)}
+      </Typography>
+      <Typography>MPG = {useCountStore((state) => state.mpg)}</Typography>
     </Box>
   );
 }

@@ -3,9 +3,9 @@ import { useCountStore } from "../state/useCountStore";
 
 function Buttons() {
   const deleteEverything = useCountStore((state) => state.deleteEverything);
-  const body = useCountStore.getState().getRequestBody();
 
   const handleClick = () => {
+    const body = useCountStore.getState().getRequestBody();
     console.log(body);
   };
 
